@@ -1,0 +1,26 @@
+{
+  "name": "nope-commerce-automation",
+  "version": "1.0.0",
+  "description": "nope commerce site automation using webdriverio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "keywords": [
+    "webdriverio",
+    "chai",
+    "mocha",
+    "allure",
+    "node-xlsx",
+    "data-driven"
+  ],
+  "author": "hridoy_das",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.17.0",
+    "@wdio/local-runner": "^8.17.0",
+    "@wdio/mocha-framework": "^8.17.0",
+    "@wdio/spec-reporter": "^8.17.0"
+  }
+}
