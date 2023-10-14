@@ -31,7 +31,7 @@ class RegistrationActions {
     }
 
     async enterLastName() {
-        let lName = "L_" + await utility.generateRandomNumber(3);
+        let lName = "L_" + await utility.generateRandomText(3);
         await registrationObjects.lastNameInputField.setValue(lName);
     }
 

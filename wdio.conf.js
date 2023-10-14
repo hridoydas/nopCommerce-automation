@@ -1,5 +1,6 @@
 const registration = './test/registration/registration.spec.js';
 const login = './test/login/login.spec.js';
+const placeOrder = './test/placeOrder/placeOrder.spec.js'
 
 exports.config = {
     //
@@ -26,7 +27,8 @@ exports.config = {
     //
     specs: [
         // registration,
-        login
+        login,
+        // placeOrder
     ],
     // Patterns to exclude.
     exclude: [
