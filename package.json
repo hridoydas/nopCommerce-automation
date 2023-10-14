@@ -4,7 +4,8 @@
   "description": "nope commerce site automation using webdriverio",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio wdio.conf.js"
+    "test": "npx wdio wdio.conf.js",
+    "getReport": "allure generate --clean allure-results && allure open"
   },
   "keywords": [
     "webdriverio",
@@ -23,6 +24,8 @@
     "@wdio/spec-reporter": "^8.17.0"
   },
   "dependencies": {
+    "@wdio/allure-reporter": "^8.17.0",
+    "allure-commandline": "^2.24.1",
     "chai": "^4.3.10",
     "node-xlsx": "^0.21.0"
   }

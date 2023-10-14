@@ -1,2 +1,5 @@
 node_modules
 task-assesment
+logs
+allure-report
+allure-results
