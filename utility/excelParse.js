@@ -1,5 +1,5 @@
 const xlsx = require('node-xlsx');
-const excelFile = xlsx.parse(`${__dirname}/data/dataFile.xlsx`)
+const excelFile = xlsx.parse(`${__dirname}/../resources/dataFile.xlsx`)
 
 const userInfoSheet = excelFile.find(sheets => sheets.name =='user_info');
 const userInfoSheetData = userInfoSheet.data;

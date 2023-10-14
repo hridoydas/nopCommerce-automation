@@ -4,101 +4,107 @@ const utility = require('../../utility/utility')
 const expect = require("chai").expect;
 let date = ''
 let month = '';
+let year = '';
 let password = excelParse.excelDataSet[0].password;
-class RegistrationActions{
 
-    // async getInfo(){
-    //     console.log("Initial Data: "+ excelParse.excelDataSet[0].first_name);
-    //     excelParse.excelDataSet[0].first_name = "Hridoy";
-    //     console.log("Updated data: "+ excelParse.excelDataSet[0].first_name);
-    // }
+class RegistrationActions {
 
-    async clickOnRegistration(){
+    async clickOnRegistration() {
         await registrationObjects.registrationMenu.click();
     }
 
-    async clickOnGenderType(){
+    async clickOnGenderType() {
+        const genders = "FM";
+        const index = Math.floor(Math.random() * genders.length);
+        const choice = genders.charAt(index);
+        if(choice =='F'){
+            excelParse.excelDataSet[0].gender = 'Female'
+        }else{
+            excelParse.excelDataSet[0].gender = 'Male'
+        }
         await registrationObjects.genderType.click();
     }
 
-    async enterFirstName(){
-        let fName = "F_"+ utility.generateRandomText(4);
+    async enterFirstName() {
+        let fName = "F_" + await utility.generateRandomText(4);
         await registrationObjects.firstNameInputFIeld.setValue(fName);
     }
 
-    async enterLastName(){
-        let lName = "L_"+ utility.generateRandomNumber(3);
+    async enterLastName() {
+        let lName = "L_" + await utility.generateRandomNumber(3);
         await registrationObjects.lastNameInputField.setValue(lName);
     }
 
-    async clickOnDobDateField(){
+    async clickOnDobDateField() {
         await registrationObjects.dobDateField.click();
     }
 
-    async selectDobDate(){
-        date = await utility.generateRandomNumber(1,20);
+    async selectDobDate() {
+        date = await utility.generateRandomNumber(1, 20);
         excelParse.excelDataSet[0].day = date;
         await registrationObjects.dobDate.click();
     }
 
-    async clickOnMonthField(){
+    async clickOnMonthField() {
         await registrationObjects.dobMonthField.click();
     }
 
-    async selectMonth(){
-        month = await utility.generateRandomNumber(1,12);
+    async selectMonth() {
+        month = await utility.generateRandomNumber(1, 12);
         excelParse.excelDataSet[0].month = month;
         await registrationObjects.dobMonth.click();
     }
 
-    async clickOnYearField(){
+    async clickOnYearField() {
         await registrationObjects.dobYearField.click();
     }
 
-    async selectYear(){
-        month = await utility.generateRandomNumber(1912,1930);
-        excelParse.excelDataSet[0].month = month;
-        await registrationObjects.dobMonth.click();
+    async selectYear() {
+        year = await utility.generateRandomNumber(1912, 1930);
+        excelParse.excelDataSet[0].year = year;
+        await registrationObjects.dobYear.click();
     }
 
-    async enterEmail(){
-        let email = utility.generateRandomText(6) + "@yopmail.com";
+    async enterEmail() {
+        let email = await utility.generateRandomText(6) + "@yopmail.com";
         await registrationObjects.emailInputField.setValue(email);
     }
 
-    async enterCompanyName(){
-        let company = "Company-"+ utility.generateRandomText(4);
+    async enterCompanyName() {
+        let company = "Company-" + await utility.generateRandomText(4);
         await registrationObjects.companyNameINputField.setValue(company);
     }
 
-    async checkNewsLetter(){
+    async checkNewsLetter() {
         const isChecked = await registrationObjects.newsletterCheckbox.isSelected();
-        if(isChecked){
+        if (isChecked) {
             console.log("News letter is checked");
-        }else{
+        } else {
             await registrationObjects.newsletterCheckbox.click();
         }
     }
 
-    async setPassword(){
+    async setPassword() {
+        console.log("Password: "+ password);
         await registrationObjects.passwordField.setValue(password);
     }
 
-    async setConfirmPassword(){
+    async setConfirmPassword() {
         await registrationObjects.confirmPasswordField.setValue(password);
     }
 
-    async clickOnRegisterButton(){
+    async clickOnRegisterButton() {
         await registrationObjects.registerButton.click();
     }
 
-    async verifyRegistrationMsg(){
+    async verifyRegistrationMsg() {
+        await registrationObjects.registrationMsg.isDisplayed({timout: 10000});
         let actulaMsg = await registrationObjects.registrationMsg.getText();
-        let expectedMsg = excelParse.excelDataSet[0].registrationMsg;
+        let expectedMsg = excelParse.excelDataSet[0].registration_msg;
         expect(actulaMsg).to.equal(expectedMsg);
     }
 
-    async userRegistration(){
+    async userRegistration() {
         await this.clickOnRegistration();
         await this.clickOnGenderType();
         await this.enterFirstName();
@@ -108,7 +114,7 @@ class RegistrationActions{
         await this.clickOnMonthField();
         await this.selectMonth();
         await this.clickOnYearField();
-        await this.selectMonth();
+        await this.selectYear();
         await this.enterEmail();
         await this.enterCompanyName();
         await this.checkNewsLetter();
@@ -116,6 +122,7 @@ class RegistrationActions{
         await this.setConfirmPassword();
         await this.clickOnRegisterButton();
         await this.verifyRegistrationMsg();
+        console.log("Complete Registration");
     }
 }
 module.exports = new RegistrationActions();

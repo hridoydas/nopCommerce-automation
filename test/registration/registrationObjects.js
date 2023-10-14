@@ -1,4 +1,4 @@
-// const excelParse = require('../../utility/excelParse');
+const excelParse = require('../../utility/excelParse');
 
 class RegistrationObjects{
 
@@ -7,8 +7,8 @@ class RegistrationObjects{
     }
 
     get genderType(){
-        return $("//label[contains(.,'Male')]");
-        // return $("//label[contains(.,'"+excelParse.excelDataSet[0].genderType+"')]")
+        // return $("//label[contains(.,'Male')]");
+        return $("//label[contains(.,'"+excelParse.excelDataSet[0].gender+"')]")
     }
 
     get firstNameInputFIeld(){
@@ -24,8 +24,9 @@ class RegistrationObjects{
     }
 
     get dobDate(){
-        return $("(//option[@value='1'])[1]");
-        // return $("(//option[@value='"+excelParse.excelDataSet[0].day+"'])[1]")
+        // return $("(//option[@value='1'])[1]");
+        console.log("Day: "+ excelParse.excelDataSet[0].day);
+        return $("(//option[@value='"+excelParse.excelDataSet[0].day+"'])[1]")
     }
 
     get dobMonthField(){
@@ -33,8 +34,8 @@ class RegistrationObjects{
     }
 
     get dobMonth(){
-        return $("(//option[@value='1'])[2]");
-        // return $("(//option[@value='"+excelParse.excelDataSet[0].month+"'])[2]")
+        // return $("(//option[@value='1'])[2]");
+        return $("(//option[@value='"+excelParse.excelDataSet[0].month+"'])[2]")
     }
 
     get dobYearField(){
@@ -42,7 +43,8 @@ class RegistrationObjects{
     }
 
     get dobYear(){
-        return $("//option[@value='1940']");
+        // return $("//option[@value='1940']");
+        return $("(//option[@value='"+excelParse.excelDataSet[0].year+"'])")
     }
 
     get emailInputField(){
