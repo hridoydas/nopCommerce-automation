@@ -1,4 +1,6 @@
-const registration = './test/registration/registration.spec.js'
+const registration = './test/registration/registration.spec.js';
+const login = './test/login/login.spec.js';
+
 exports.config = {
     //
     // ====================
@@ -23,7 +25,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        registration
+        // registration,
+        login
     ],
     // Patterns to exclude.
     exclude: [

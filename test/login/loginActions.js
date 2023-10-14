@@ -2,8 +2,8 @@ const loginObjects = require('./loginObjects')
 const excelParse = require('../../utility/excelParse');
 const expect = require("chai").expect;
 
-const validEmail = excelParse.excelDataSet[0].email; 
-const validPass = excelParse.excelDataSet[0].password;
+const validEmail = excelParse.excelDataSet[1].email; 
+const validPass = excelParse.excelDataSet[1].password;
 const invalidEmail = 'invalid@yopmail.com';
 const invalidPass = 'invalid'
 
@@ -27,12 +27,12 @@ class LoginActions{
 
     async verifyEmailErrorMsg(){
         let actualMsg = await loginObjects.loginEmailErrorMsg.getText();
-        let ExpectedMsg = 'Please enter your email';
-        await expect(actualMsg.to)
+        let expectedMsg = 'Please enter your email';
+        await expect(actualMsg).to.include(expectedMsg);
     }
 
     async verifyLoginErrorMessage(){
-        let actualMsg = await loginObjects.loginEmailErrorMsg.getText();
+        let actualMsg = await loginObjects.invalidCredentialsMsg.getText();
         let expectedMsg = 'Login was unsuccessful. Please correct the errors and try again';
         expect(actualMsg).to.include(expectedMsg);
     }
