@@ -1,7 +1,7 @@
 const registrationObjects = require('./registrationObjects')
 const excelParse = require('../../utility/excelParse')
 const utility = require('../../utility/utility')
-const chaiExpect = require("chai").expect;
+const expect = require("chai").expect;
 let date = ''
 let month = '';
 let password = excelParse.excelDataSet[0].password;
@@ -95,7 +95,7 @@ class RegistrationActions{
     async verifyRegistrationMsg(){
         let actulaMsg = await registrationObjects.registrationMsg.getText();
         let expectedMsg = excelParse.excelDataSet[0].registrationMsg;
-        chaiExpect(actulaMsg).to.equal(expectedMsg);
+        expect(actulaMsg).to.equal(expectedMsg);
     }
 
     async userRegistration(){
