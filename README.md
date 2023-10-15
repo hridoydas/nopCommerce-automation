@@ -83,3 +83,22 @@ Get report
 ```bash
   npm run getReport
 ```
+
+## Demo
+
+Feature-1: Nopcommerce registration feature Test.
+
+URL: https://drive.google.com/file/d/15dcSjE1mj1hRvMjWboz4zqjbr8PPwhQE/view?usp=sharing
+
+Feature-2: Nopcommerce login feature Test.
+
+URL: https://drive.google.com/file/d/1DWLhmH4fDDFzo_HoQkGCq2b4OWsKyQif/view?usp=drive_link
+
+Feature-3: Nopcommerce place order feature Test.
+
+URL: https://drive.google.com/file/d/1QnDthsfU-xZ2Gu9aoDE75Q33TOmMOY7r/view?usp=sharing
+
+Full suite journey and get allure report.
+
+URL: https://drive.google.com/file/d/1RaTPeka7LPpXMHGQoj6a2vzeJ6e1H2dC/view?usp=sharing
+
