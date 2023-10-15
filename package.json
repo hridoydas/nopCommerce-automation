@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx wdio wdio.conf.js",
+    "login": "wdio wdio.conf.js --suite login",
+    "registration": "wdio wdio.conf.js --suite registration",
+    "placeOrder": "wdio wdio.conf.js --suite placeOrder",
+    "nopCommerce": "wdio wdio.conf.js --suite nopCommerce",
     "getReport": "allure generate --clean allure-results && allure open"
   },
   "keywords": [

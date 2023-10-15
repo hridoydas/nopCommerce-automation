@@ -34,6 +34,31 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+    suites:{
+        login:[
+            [
+                login
+            ]
+        ],
+        placeOrder:[
+            [
+                placeOrder
+            ]
+        ],
+        registration:[
+            [
+                registration,
+            ]
+        ],
+
+        nopCommerce:[
+            [
+                registration,
+                login,
+                placeOrder
+            ]
+        ]
+    },
     //
     // ============
     // Capabilities
