@@ -26,9 +26,9 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        // registration,
+        registration,
         login,
-        // placeOrder
+        placeOrder
     ],
     // Patterns to exclude.
     exclude: [

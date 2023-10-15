@@ -17,6 +17,5 @@ class Utility{
         return randomNum;
     }
 
-    async
 }
 module.exports = new Utility();

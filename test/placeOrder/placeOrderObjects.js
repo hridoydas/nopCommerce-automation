@@ -31,6 +31,22 @@ class PlaceOrderObjects{
         return $("(//input[@class='qty-input'])[1]")
     }
 
+    get recipientsName(){
+        return $("//input[@id='giftcard_43_RecipientName']")
+    }
+
+    get recipientEmail(){
+        return $("//input[@id='giftcard_43_RecipientEmail']")
+    }
+
+    get senderName(){
+        return $("//input[@id='giftcard_43_SenderName']")
+    }
+
+    get senderEmail(){
+        return $("//input[@id='giftcard_43_SenderEmail']")
+    }
+
     get addToCartCrossIcon(){
         return $("//span[@class='close']");
     }
@@ -92,7 +108,7 @@ class PlaceOrderObjects{
     }
 
     get baPhoneNumber(){
-        return $("BillingNewAddress_PhoneNumber")
+        return $("//input[@id='BillingNewAddress_PhoneNumber']")
     }
 
     get baContinueButton(){
@@ -105,6 +121,14 @@ class PlaceOrderObjects{
 
     get paymentMethodContinueButton(){
         return $("//button[@onclick='PaymentMethod.save()']")
+    }
+
+    get shippingMethodNextToAir(){
+        return $("//label[contains(.,'Next Day Air')]")
+    }
+
+    get shippingMethodContinueButton(){
+        return $("//button[@onclick='ShippingMethod.save()']")
     }
 
     get cardTypeDropdown(){
